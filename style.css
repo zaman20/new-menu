@@ -1,0 +1,25 @@
+.sidebar-menu{
+    width: 275px;
+}
+.sidebar-menu ul{
+    width: 100%;
+}
+.sidebar-menu ul li{
+    display: block;
+   
+}
+.sidebar-menu ul li a{
+    font-size: 14px;
+    text-decoration: none;
+    padding: 10px 5px;
+    display: block;
+}
+.sidebar-menu ul li a:hover{
+    background-color: blanchedalmond;
+}
+.sidebar-menu ul li ul{
+    display: none;
+}
+.active{
+    background-color: brown;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar-menu">
+        <h2>All Menu List</h2>
+        <ul>
+            <li><a href="/index.html">Dashboard</a></li>
+            <li><a href="#">Accounts </a>
+                <span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <span style="display: none;">
+                    <i class="fa-solid fa-angle-up" ></i>
+                </span>
+                
+                <ul>
+                    <li><a href="account.html">All Deposit</a></li>
+                    <li><a href="">All Withdraw</a></li>
+                </ul>
+            </li>
+            <li><a href="">Products</a></li>
+            <li>
+                <a href="services.php">Services</a>
+                <span>
+                    <i class="fa-solid fa-angle-down"></i>
+                </span>
+                <span style="display: none;">
+                    <i class="fa-solid fa-angle-up" ></i>
+                </span>
+                <ul>
+                    <li><a href="">All Deposit</a></li>
+                    <li><a href="">All Withdraw</a></li>
+                </ul>
+            </li>
+            <li><a href="">Blogs</a></li>
+            <li><a href="">Pages</a></li>
+            <li><a href="">Order</a></li>
+        </ul>
+    </div>
+
+
+    <script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+
+    <script>
+        $('.sidebar-menu ul li').on('click',function(e){
+            
+            $(this).children('ul').slideToggle();
+            $(this).children('span').toggle();
+
+
+            e.stopPropagation();
+            e.preventDefault();
+
+            var url = window.location.href
+            var parts = url.split("/")
+            var route = parts[parts.length-1]
+
+            console.log(url) 
+            console.log(parts) 
+            console.log(route) 
+            if(route){
+            $('a[href*="/'+route+'"]').parent('li').addClass('active');
+            }
+
+        });
+
+    </script>
+</body>
+</html>
